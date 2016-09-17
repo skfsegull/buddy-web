@@ -1,0 +1,2 @@
+# buddy-web
+Félagatal framendi
