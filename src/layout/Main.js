@@ -1,25 +1,17 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
+import styles from './Main.less';
 
 /**
  * @class Main
  * @module *
  */
 class Main extends React.Component {
-
-	//static defaultProps = {};
-	//static propTypes = {};
-	//state = {};
-
-	//componentWillMount () {}
-	//componentDidMount () {}
-	//componentWillUnmount () {}
-	//shouldComponentMount () { return true; }
-
 	render () {
 		return (
-			<div className="main">{
-				this.props.children
-			}</div>
+			<div className={ styles.main }>
+				Main
+				{ this.props.children }
+			</div>
 		);
 	}
 }

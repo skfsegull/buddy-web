@@ -1,4 +1,4 @@
 import {createAction} from 'redux-actions';
 
-const initialState = {};
-
+export const login = createAction('LOGIN');
+export const logout = createAction('LOGOUT');

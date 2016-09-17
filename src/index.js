@@ -1,30 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux'
-import { Router, Route, browserHistory } from 'react-router'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import {Provider} from 'react-redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import {Router, Route, browserHistory} from 'react-router'
+import {syncHistoryWithStore, routerReducer, routerMiddleware} from 'react-router-redux'
 
+import logger from './utils/logger';
 import loginReducer from './reducers/loginReducer';
 
 import Main from './layout/Main';
+import Global from './layout/Global';
+import Clean from './layout/Clean';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 
-const store = createStore(
-  combineReducers({
-    loginReducer,
-    routing: routerReducer
-  })
+const middleware = routerMiddleware(browserHistory);
+
+const store = createStore(combineReducers({
+		loginReducer,
+		routing: routerReducer
+	}), applyMiddleware(logger, middleware)
 );
 
-const history = syncHistoryWithStore(browserHistory, store);
-
 ReactDOM.render(<Provider store={store}>
-	<Router history={history}>
-      <Route path="/" component={Main}>
-        <Route path="login" component={Login}/>
-      </Route>
-    </Router>
+		<Router history={browserHistory }>
+			<Route component={ Global }>
+				<Route component={Clean}>
+					<Route path="login" component={Login} />
+				</Route>
+				<Route component={Main}>
+					<Route path="*" component={Profile} />
+				</Route>
+			</Route>
+		</Router>
 	</Provider>,
-  document.getElementById('root')
+	document.getElementById('root')
 );
