@@ -32,8 +32,10 @@ class Button extends React.Component {
 		let className = styles.main;
 		if(inverse) className = styles.inverse;
 		if(danger) className = styles.danger;
-		if(disabled) className = styles.disabled;
 		if(primary) className = styles.primary;
+		if(disabled) className = styles.disabled;
+		
+		console.log('disabled', disabled);
 
 		return (
 			<button onClick={ this.handleClick } className={ className }>
