@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Navigation from '../components/Navigation/Navigation';
 import NavigationItem from '../components/Navigation/NavigationItem';
 import styles from './Main.less';
@@ -12,19 +12,24 @@ class Main extends React.Component {
 		return (
 			<div className={ styles.main }>
 				<Navigation className={ styles.navigation }>
-					<NavigationItem>
+					<div className={ styles.navigationHead }>
+						<div className={ styles.navigationIcon }>
+							Buddy
+						</div>
+					</div>
+					<NavigationItem icon="rocket" >
 						Yfirlit
 					</NavigationItem>
-					<NavigationItem>
+					<NavigationItem icon="calendar" selected>
 						Viðburðir
 					</NavigationItem>
-					<NavigationItem>
+					<NavigationItem icon="user">
 						Mín skráning
 					</NavigationItem>
-					<NavigationItem>
+					<NavigationItem icon="users">
 						Iðkendur
 					</NavigationItem>
-					<NavigationItem>
+					<NavigationItem icon="logout">
 						Útskráning
 					</NavigationItem>
 				</Navigation>

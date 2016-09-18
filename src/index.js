@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Router, Route, browserHistory} from 'react-router'
-import {syncHistoryWithStore, routerReducer, routerMiddleware} from 'react-router-redux'
+import {routerReducer, routerMiddleware} from 'react-router-redux'
 
 import logger from './utils/logger';
 import loginReducer from './reducers/loginReducer';

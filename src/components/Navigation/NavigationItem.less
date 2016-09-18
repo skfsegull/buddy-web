@@ -1,13 +1,30 @@
 @import '../../styles/variables';
 
 .main {
-	padding:        @padding*2 @padding * 3;
-	display:        inline-block;
+	padding:        @padding*2 @padding * 2;
+	//display:        inline-block;
 	text-transform: uppercase;
 	cursor:         pointer;
-	font-size: @fontSize--xl;
+	font-size:      @fontSize;
+	letter-spacing: 3px;
+
+	transition: background-color 0.3s @primaryAnimationCurve;
 
 	&:hover {
-		background-color: darken(@jollyColor, 10%);
+		background-color: @jollyColor;
 	}
+}
+
+.selected{
+	composes: main;
+
+	background-color: lighten(@darkColor, 20%);
+}
+
+.icon{
+	padding-right: @padding;
+}
+
+.text{
+	vertical-align: center;
 }

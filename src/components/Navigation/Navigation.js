@@ -18,7 +18,7 @@ class Navigation extends React.Component {
 
 	render () {
 		return (
-			<ul className={ styles.main}>
+			<ul className={ [styles.main, this.props.className].join(' ')}>
 				{
 					this.props.children
 				}

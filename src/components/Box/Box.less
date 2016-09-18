@@ -3,7 +3,7 @@
 .main{
 	flex: 1 1 auto;
 	width: 100%;
-	padding: @padding;
+	padding: @padding * 2;
 	vertical-align: top;
 	height: auto;
 
@@ -17,7 +17,12 @@
 }
 
 .title{
-	border-bottom: 1px solid @borderColor;
+	border-bottom: 1px solid @borderColor--light;
 	padding-bottom: @padding;
 	margin-bottom: @padding* 2;
+	font-size: @fontSize;
+	font-weight: 300;
+	color: @borderColor;
+	//text-transform: uppercase;
+	letter-spacing: 1px;
 }

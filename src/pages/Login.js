@@ -35,8 +35,8 @@ class Login extends React.Component {
 
 	handleSSNChange = ( value ) => {
 		this.setState({
-			valid: value.length == 10,
-			showPassword: value.length == 10
+			valid: value.length === 10,
+			showPassword: value.length === 10
 		})
 	};
 

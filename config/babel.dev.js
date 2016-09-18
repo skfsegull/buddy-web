@@ -14,6 +14,7 @@ module.exports = {
   ],
   plugins: [
     // class { handleClick = () => { } }
+    require.resolve('jsx-control-statements'),
     require.resolve('babel-plugin-transform-class-properties'),
     // { ...todo, completed: true }
     require.resolve('babel-plugin-transform-object-rest-spread'),

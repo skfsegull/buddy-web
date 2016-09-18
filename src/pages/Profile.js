@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import styles from './Profile.less';
 
 import Box from '../components/Box/Box';
@@ -20,20 +20,27 @@ class Profile extends React.Component {
 	render () {
 		return (
 			<div className={ styles.main }>
-				<div className={ styles.grid }><Box title="Opnir viðburðir" size="half">
-					Hérna kemur eitthvað stuff
-				</Box>
-					<Box title="Þín skráning" size="half">
+				<div className={ styles.grid }>
+					<Box title="Titill" size="third">
 						Hérna kemur eitthvað stuff
 					</Box>
 				</div>
-				<div  className={ styles.grid }>
-					<Box title="Annað stöff" size="third">
+				<div className={ styles.grid }>
+					<Box title="Opnir viðburðir">
+						<ul>
+							<li>Félagsútilega - Skrá - Fela</li>
+							<li>Jota joti - Skrá - Fela</li>
+						</ul>
 					</Box>
-					<Box title="Annað stöff" size="third">
+					<Box title="Lokaðir viðburðir">
+						<ul>
+							<li>Félagsútilega - Skrá - Fela</li>
+							<li>Jota joti - Skrá - Fela</li>
+						</ul>
 					</Box>
-					<Box title="Þín skráning" size="third">
-						Hérna kemur eitthvað stuff
+				</div>
+				<div className={ styles.grid }>
+					<Box title="Þínir hópar">
 					</Box>
 				</div>
 			</div>
