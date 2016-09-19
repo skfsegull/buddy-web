@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Profile.less';
 
 import Box from '../components/Box/Box';
+import EventList from '../components/EventList/EventList';
 /**
  * @class Profile
  * @module *
@@ -27,10 +28,7 @@ class Profile extends React.Component {
 				</div>
 				<div className={ styles.grid }>
 					<Box title="Opnir viðburðir">
-						<ul>
-							<li>Félagsútilega - Skrá - Fela</li>
-							<li>Jota joti - Skrá - Fela</li>
-						</ul>
+						<EventList />
 					</Box>
 					<Box title="Lokaðir viðburðir">
 						<ul>

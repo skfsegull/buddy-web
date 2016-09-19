@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { PropTypes } from 'react';
 import styles from './Button.less';
 
@@ -13,7 +11,8 @@ class Button extends React.Component {
 		primary: PropTypes.bool,
 		disabled: PropTypes.bool,
 		danger: PropTypes.bool,
-		inverse: PropTypes.bool,
+		invert: PropTypes.bool,
+		inline: PropTypes.bool,
 		onClick: PropTypes.func
 	};
 
@@ -27,18 +26,20 @@ class Button extends React.Component {
 
 	render () {
 
-		const { primary, danger, disabled, inverse } = this.props;
+		const { primary, danger, disabled, invert, inline, size, className } = this.props;
 
-		let className = styles.main;
-		if(inverse) className = styles.inverse;
-		if(danger) className = styles.danger;
-		if(primary) className = styles.primary;
-		if(disabled) className = styles.disabled;
-		
-		console.log('disabled', disabled);
+		let selectedStyle = styles.main;
+		if(invert) selectedStyle = styles.invert;
+		if(danger) selectedStyle = styles.danger;
+		if(primary) selectedStyle = styles.primary;
+		if(disabled) selectedStyle = styles.disabled;
+
+		let classNames = [selectedStyle, className];
+		if(inline) classNames.push(styles.inline);
+		if(size) classNames.push(styles[size]);
 
 		return (
-			<button onClick={ this.handleClick } className={ className }>
+			<button onClick={ this.handleClick } className={ classNames.join(' ') }>
 				{ this.props.children || this.props.label }
 			</button>
 		);

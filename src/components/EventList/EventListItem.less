@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.main {
+	list-style:    none;
+	padding:       @padding * 2 0;
+	border-bottom: 1px solid @borderColor--light;
+	display: flex;
+
+	&:first-child{
+		padding-top: 0;
+	}
+
+
+
+}
+
+.info {
+	font-size: @fontSize--sm;
+	flex: 1 1 auto;
+}
+
+.actions{
+	flex: 0 0 auto;
+}
+
+.button{
+	min-width: 75px;
+}
+
+.buttonRegister{
+	composes: button;
+	background-color: @highlightColor;
+}
